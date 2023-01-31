@@ -1,0 +1,35 @@
+--You can change data types with two different type of syntax. 
+--For example, CAST(column_name AS integer) and column_name::integer produce the same result.
+
+--Convert the funding_total_usd and founded_at_clean columns in the tutorial.crunchbase_companies_clean_date table 
+--to strings (varchar format) using a different formatting function for each one.
+
+SELECT CAST(funding_total_usd AS varchar) AS funding_total_usd_string,
+       founded_at_clean::varchar AS founded_at_string
+  FROM tutorial.crunchbase_companies_clean_date
+LIMIT 20
+
+--Return:
+funding_total_usd_string	founded_at_string
+	
+5050000	                  2013-01-01
+7000000	                  2011-10-10
+4912394	
+9300000	
+3500000	                  2011-05-01
+4000000	
+1750000	                  2012-06-01
+2000000	                  2007-01-01
+1700000	                  2011-01-01
+1750000	                  1984-01-01
+1550000	                  2001-01-01
+	
+2535000	                  2010-07-01
+4196711	                  2008-01-01
+1736910	                  2010-11-20
+3000000	
+3000000	
+1250000	                  2011-09-16
+35000000	                2000-01-01
+
+--
